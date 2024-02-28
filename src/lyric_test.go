@@ -22,6 +22,7 @@ var (
 	getOneLyricActual  string = "the house that Jack built"
 	getOneObjectActual string = "This is the house"
 	getMoreThanSongLine string = fmt.Sprintf("Input more than %d song line", len(songTest.Lyric))
+	getZeroThanSongLine string = "Input cannot zero"
 )
 
 func TestGetOneLyric(t *testing.T) {
@@ -49,5 +50,19 @@ func TestGetObjectMoreThanSongLine(t *testing.T) {
 	t.Logf("Get object more than song line : %s", getMoreThanSongLine)
 	if songTest.ReciteObject(len(songTest.Lyric)+1) != getMoreThanSongLine {
 		t.Errorf("WRONG! it must %s", getMoreThanSongLine)
+	}
+}
+
+func TestGetLyricZeroLine(t *testing.T) {
+	t.Logf("Get lyric more than song line : %s", getZeroThanSongLine)
+	if songTest.Recite(0) != getZeroThanSongLine {
+		t.Errorf("WRONG! it must %s", getZeroThanSongLine)
+	}
+}
+
+func TestGetObjectZeroLine(t *testing.T) {
+	t.Logf("Get object more than song line : %s", getZeroThanSongLine)
+	if songTest.ReciteObject(0) != getZeroThanSongLine {
+		t.Errorf("WRONG! it must %s", getZeroThanSongLine)
 	}
 }

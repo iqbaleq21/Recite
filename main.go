@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	// Initiate data
 	aSong := entity.Song{Lyric: []string{
 		"the horse and the hound and the horn that belonged to",
 		"the farmer sowing his corn that kept",
@@ -21,6 +22,15 @@ func main() {
 		"the house that Jack built",
 	}}
 	
-	fmt.Println(aSong.Recite(2))
-	fmt.Println(aSong.ReciteObject(1))
+	// Recite lyric
+	fmt.Println(aSong.Recite(0))
+	fmt.Println(aSong.Recite(7))
+	fmt.Println(aSong.Recite())
+	fmt.Println(aSong.Recite(21))
+
+	// Recite object on lyric
+	fmt.Println(aSong.ReciteObject(3))
+	fmt.Println(aSong.ReciteObject())
+	fmt.Println(aSong.ReciteObject(23))
+	fmt.Println(aSong.ReciteObject(0))
 }
